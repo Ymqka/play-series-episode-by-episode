@@ -14,6 +14,10 @@ source ~/.bashrc
 5) setup folder with series
 run medcon --set {FOLDER_TO_YOUR_SERIES}
 
-6) enjoy
+6) to play first episode just run medcon without any arguments
+medcon
+
+7) to play previous episode
+medcon --prev 1
 
 
