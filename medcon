@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+
+import media_control
+import sys
+
+args = media_control.parse_arguments()
+
+media_control.init()
+
+WM = media_control.WatchingMedia()
+CH = media_control.ConfigHandler()
+
+if not args.path:
+    CH.check_if_inited()
+
+if len(sys.argv) == 1:
+    latest_episode = WM.play_next_episode()
+    CH.update_previous_episode(latest_episode)
+
+elif args.path:
+    new_series_dir = args.path
+    CH.update_series_dir(new_series_dir)
+
+elif args.show:
+    CH.show()
+
+elif args.previous:
+    WM.play_previous_episode()
+
+CH.write()
