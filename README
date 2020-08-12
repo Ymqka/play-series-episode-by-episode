@@ -1,0 +1,19 @@
+to install app into home dir
+1) in main directory of the app:
+pip3 install --user .
+
+2) medcon should appear in ~/.local/bin
+
+3) to execute medcon add bin directory to $PATH
+add this line to your .profile/.bashrc/.zshrc/etc:
+export PATH="$PATH:$HOME/.local/bin"
+
+4) reload your profle/rc, e.g. 
+source ~/.bashrc
+
+5) setup folder with series
+run medcon --set {FOLDER_TO_YOUR_SERIES}
+
+6) enjoy
+
+
