@@ -5,10 +5,10 @@ with open('requirements.txt') as f:
 
 setup(
     name='medcon-cryacrya',
-    version='1.2',
+    version='1.3',
     description='play series episode by episode',
     install_requires=requirements,
     python_requires='>=3.6',
     packages=setuptools.find_packages(),
-    scripts=['scripts/medcon']
+    scripts=['medcon']
 )
