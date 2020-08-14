@@ -1,6 +1,7 @@
 import sqlite3
 import configparser
 import os
+import sys
 
 import media_control.settings as settings
 
@@ -27,6 +28,19 @@ class ConfigHandler:
         for section in conf.sections():
             for(key, val) in conf.items(section):
                 print(key + '=' + val)
+
+        return
+
+    def update_conf(self,args):
+        conf = self._conf
+
+        key, value = args[0], args[1]
+
+        if key not in settings.ALLOWED_SETTINGS:
+            print("not allowed to set unknown options")
+            sys.exit(1)
+
+        conf.set('app_data', key, value)
 
         return
 

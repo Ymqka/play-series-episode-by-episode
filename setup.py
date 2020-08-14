@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='medcon-cryacrya',
-    version='1.3',
+    version='1.5',
     description='play series episode by episode',
     install_requires=requirements,
     python_requires='>=3.6',

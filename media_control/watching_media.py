@@ -15,8 +15,8 @@ class WatchingMedia:
     def play_episode(self, path_to_episode):
         curr = self._curr
 
-        os.system("i3-msg 'workspace 7: VLC'")
-        os.system("vlc --fullscreen " + path_to_episode)
+        os.system(self._conf.get('app_data', 'BEFORE_HAND_COMMAND'))
+        os.system(self._conf.get('app_data', 'VIDEO_PLAY_COMMAND') + ' ' + path_to_episode)
 
         return
 

@@ -17,5 +17,9 @@ def init():
     if not conf.has_section('app_data'):
         conf.add_section('app_data')
         conf.set('app_data', 'INITED', 'FALSE')
+        conf.set('app_data', 'BEFORE_HAND_COMMAND', '')
+        conf.set('app_data', 'VIDEO_PLAY_COMMAND', 'vlc ')
+        conf.set('app_data', 'PREVIOUS_EPISODE', '')
+        conf.set('app_data', 'CURRENT_SERIES_DIR', '')
         with open(settings.config_path, 'w') as config_file:
             conf.write(config_file)

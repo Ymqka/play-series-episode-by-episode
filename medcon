@@ -10,19 +10,23 @@ media_control.init()
 WM = media_control.WatchingMedia()
 CH = media_control.ConfigHandler()
 
-if not args.path:
+if args.show:
+    CH.show()
+
+elif args.series_dir:
+    new_series_dir = args.series_dir
+    CH.update_series_dir(new_series_dir)
+
+elif args.set:
+    config_value = args.set
+    CH.update_conf(config_value)
+
+else:
     CH.check_if_inited()
 
 if len(sys.argv) == 1:
     latest_episode = WM.play_next_episode()
     CH.update_previous_episode(latest_episode)
-
-elif args.path:
-    new_series_dir = args.path
-    CH.update_series_dir(new_series_dir)
-
-elif args.show:
-    CH.show()
 
 elif args.previous:
     WM.play_previous_episode()
